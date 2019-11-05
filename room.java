@@ -66,7 +66,7 @@ public class room{
 
   public double[] getRates(){return rates;}/**returns rates for this room as double array*/
 
-  public static void setNumRooms(int num){num=numOfRooms;}/**changes the static number of rooms of given type*/
+  public static void setNumRooms(int num){numOfRooms=num;}/**changes the static number of rooms of given type*/
 
   public static int getNumRooms(){return numOfRooms;}/**returns the static number of rooms of given type as an integer*/
 }

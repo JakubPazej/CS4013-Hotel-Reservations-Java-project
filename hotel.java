@@ -1,19 +1,13 @@
+/**class for creating and managing a hotel*/
 import java.util.ArrayList;
 public class hotel{
   //datafields
   protected String name;
   protected ArrayList<room> roomTypes = new ArrayList<room>();
   protected int stars = -1;
+  
   public hotel(String name){/**creates a hotel object with given name*/
     this.name=name;
-  }
-  
-  public void setStars(int stars){/**changes amount of stars for hotel object*/
-    this.stars=stars;
-  }
-  
-  public int getStars(){/**returns amount of stars of the hotel object as integer*/
-    return stars;
   }
   
   public void setName(String name){/**changes a name for hotel object*/
@@ -22,6 +16,14 @@ public class hotel{
   
   public String getName(){/**returns a String with the name of the hotel object*/
     return name;
+  }
+  
+  public void setStars(int stars){/**changes amount of stars for hotel object*/
+    this.stars=stars;
+  }
+  
+  public int getStars(){/**returns amount of stars of the hotel object as integer*/
+    return stars;
   }
 
   public void addRoomType(String roomType){/**adds a room type to the room types list*/
@@ -56,7 +58,7 @@ public class hotel{
     roomTypes.get(findRoomType(type)).setBreakfast(bool);
   }
   
-  public boolean setBreakfast(String type){/**returns the availability of breakfast for a room as a boolean*/
+  public boolean getBreakfast(String type){/**returns the availability of breakfast for a room as a boolean*/
     return roomTypes.get(findRoomType(type)).getBreakfast();
   }
   
@@ -68,11 +70,11 @@ public class hotel{
     return roomTypes.get(findRoomType(type)).getRates();
   }
 
-  public void setNumRooms(String type, int num){/**changes the static number of rooms of given type*/
+  public void setNumRooms(String type, int num){/**changes the number of rooms of given type*/
     roomTypes.get(findRoomType(type)).setNumRooms(num);
   }
 
-  public int getNumRooms(String type){/**returns the static number of rooms of given type as an integer*/
+  public int getNumRooms(String type){/**returns the number of rooms of given type as an integer*/
     return roomTypes.get(findRoomType(type)).getNumRooms();
   }
   

@@ -10,8 +10,7 @@ public class room{
   protected double[] rates = new double[7];
   protected static int numOfRooms;
 
-  public room(String type){
-    /**creates a room object with desired type*/
+  public room(String type){/**creates a room object with desired type*/
     this.type = type;
   }
 
@@ -67,7 +66,7 @@ public class room{
 
   public double[] getRates(){return rates;}/**returns rates for this room as double array*/
 
-  public void setNumRooms(int numOfRooms){this.numOfRooms=numOfRooms;}
+  public static void setNumRooms(int num){num=numOfRooms;}/**changes the static number of rooms of given type*/
 
-  public int getNumRooms(){return numOfRooms;}
+  public static int getNumRooms(){return numOfRooms;}/**returns the static number of rooms of given type as an integer*/
 }

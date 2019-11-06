@@ -49,18 +49,29 @@ public class hotels_driver{
         hotelChain.changeOccuMax("Omicron", "Classic Double", 2, 0);
         hotelChain.changeOccuMax("Omicron", "Classic Twin", 2, 1);
         hotelChain.changeOccuMax("Omicron", "Classic Single", 1, 1);
+        
+        double[] Deluxe_Double = {75,75,75,80,90,90,75}; //creating arrays with rates for different rooms in different hotels
+        double[] Deluxe_Twin = {75,75,75,80,90,90,75};
+        double[] Deluxe_Single = {70,70,70,75,80,80,65};
+        double[] Deluxe_Family = {80,80,80,80,100,100,80};
+        double[] Theta_Double = {70,70,70,70,80,85,85};
+        double[] Theta_Twin = {70,70,70,70,80,85,85};
+        double[] Theta_Single = {65,65,65,65,70,75,80};
+        double[] Omicron_Double = {65,65,70,70,75,80,65};
+        double[] Omicron_Twin = {65,65,70,70,80,85,65};
+        double[] Omicron_Single = {50,50,50,60,75,75,50};
 
-        hotelChain.setRates("Upsilon", "Deluxe Double", {75;75;75;80;90;90;75;});//setting up rates for different rooms and different days
-        hotelChain.setRates("Upsilon", "Deluxe Twin", [75,75,75,80,90,90,75]);
-        hotelChain.setRates("Upsilon", "Deluxe Single", {70,70,70,75,80,80,65});
-        hotelChain.setRates("Upsilon", "Deluxe Family", {80,80,80,80,100,100,80});
+        hotelChain.setRates("Upsilon", "Deluxe Double", Deluxe_Double);//setting up rates for different rooms and different days
+        hotelChain.setRates("Upsilon", "Deluxe Twin", Deluxe_Twin);
+        hotelChain.setRates("Upsilon", "Deluxe Single", Deluxe_Single);
+        hotelChain.setRates("Upsilon", "Deluxe Family", Deluxe_Family);
 
-        hotelChain.setRates("Theta", "Executive Double", {70,70,70,70,80,85,85});
-        hotelChain.setRates("Theta", "Executive Twin", {70,70,70,70,80,85,85});
-        hotelChain.setRates("Theta", "Executive Single", {65,65,65,65,70,75,80});
+        hotelChain.setRates("Theta", "Executive Double", Theta_Double);
+        hotelChain.setRates("Theta", "Executive Twin", Theta_Twin);
+        hotelChain.setRates("Theta", "Executive Single", Theta_Single);
 
-        hotelChain.setRates("Omicron", "Classic Double", {65,65,70,70,75,80,65});
-        hotelChain.setRates("Omicron", "Classic Twin", {65,65,70,70,80,85,65});
-        hotelChain.setRates("Omicron", "Classic Single", {50,50,50,60,75,75,50});
+        hotelChain.setRates("Omicron", "Classic Double", Omicron_Double);
+        hotelChain.setRates("Omicron", "Classic Twin", Omicron_Twin);
+        hotelChain.setRates("Omicron", "Classic Single", Omicron_Single);
     }
 }

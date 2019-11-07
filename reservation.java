@@ -7,6 +7,8 @@ public class reservation{
     GregorianCalendar till;
     Date created;
     
+    public reservation(){}
+    
     public void setFirstName(String firstName){/**changes the first name for a reservation*/
         this.firstName = firstName;
     }
@@ -39,5 +41,7 @@ public class reservation{
         return till;
     }
     
-    public void finishReservation(){}
+    public void finishReservation(){
+        created = new Date();
+    }
 }

@@ -2,7 +2,7 @@ import java.util.GregorianCalendar;
 import java.util.Date;
 import java.io.*;
 public class writeToCSV{
-    public static void reservation(int resNum, String firstName, String lastName,String resType/* , GregorianCalendar from, GregorianCalendar till, Date created*/) {
+    public static void reservation(int resNum, String firstName, String lastName,String resType, GregorianCalendar from, GregorianCalendar till, Date created) {
 		String outputFile = Integer.toString(resNum)+"_"+lastName+".csv";
 		
 		// before we open the file check to see if it already exists

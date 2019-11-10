@@ -6,6 +6,9 @@ public class reservation{
     GregorianCalendar from;
     GregorianCalendar till;
     Date created;
+    int resNum = 0;
+    writeToCSV writer = new writeToCSV();
+    String resType;
     
     public reservation(){}
     
@@ -43,5 +46,7 @@ public class reservation{
     
     public void finishReservation(){
         created = new Date();
+        writer.reservation(resNum, firstName, lastName, resType, from, till, created);
+        resNum++;
     }
 }

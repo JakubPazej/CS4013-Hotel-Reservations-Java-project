@@ -1,5 +1,6 @@
 import java.util.GregorianCalendar;
 import java.util.Date;
+import java.io.*;
 public class reservation{
     String firstName;
     String lastName;
@@ -7,7 +8,7 @@ public class reservation{
     GregorianCalendar till;
     Date created;
     int resNum = 0;
-    writeToCSV writer = new writeToCSV();
+    toWriteCSV writer = new toWriteCSV();
     String resType;
     
     public reservation(){}
@@ -46,7 +47,10 @@ public class reservation{
     
     public void finishReservation(){
         created = new Date();
-        writer.reservation(resNum, firstName, lastName, resType, from, till, created);
-        resNum++;
+        try {
+            writer.reservation(resNum, firstName, lastName, resType, from, till);
+            resNum++;
+        }
+        catch (IOException ioe) {}
     }
 }

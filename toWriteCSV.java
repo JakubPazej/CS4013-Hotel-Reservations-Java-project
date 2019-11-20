@@ -9,10 +9,10 @@ public class toWriteCSV {
         Date created = new Date();
         try {
             File file = new File("outputFile.csv");
-            pw = new PrintWriter(file);
+            pw = new PrintWriter((new FileWriter(file,true)));
             Scanner testing = new Scanner(file);
             StringBuffer csvData = new StringBuffer("");                       
-                if(testing.hasNext()){
+            if(testing.hasNext()){
                    
                 }
                 else{
@@ -22,7 +22,7 @@ public class toWriteCSV {
                 }
             
             
-                csvData.append("\n");
+            csvData.append("");
             // write data
             csvData.append(resNum);
             csvData.append(',');
@@ -38,6 +38,7 @@ public class toWriteCSV {
             csvData.append(',');
             csvData.append(created);
             csvData.append(',');
+            csvData.append('\n');
             
             pw.write(csvData.toString());
             pw.close();
@@ -45,6 +46,17 @@ public class toWriteCSV {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-    }       
+    }  
+    public static void clear() throws java.io.IOException{
+            File file = new File("outputFile.csv");
+            PrintWriter pw;
+            pw = new PrintWriter((new FileWriter(file,false)));
+            Scanner testing = new Scanner(file);
+            StringBuffer csvData = new StringBuffer("");                       
+            StringBuffer csvHeader = new StringBuffer("");
+            csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date\n");
+            pw.write(csvHeader.toString());
+                
+    }
 }
 

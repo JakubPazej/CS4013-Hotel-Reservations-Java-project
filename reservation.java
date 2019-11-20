@@ -21,7 +21,7 @@ public class reservation{
         return firstName;
     }
     
-    public void setLastName(String firstName){/**changes the last name for a reservation*/
+    public void setLastName(String lastName){/**changes the last name for a reservation*/
         this.lastName = lastName;
     }
     
@@ -32,7 +32,7 @@ public class reservation{
     public void setFrom(int day, int month, int year){
         from.set(year, month, day);
     }
-    
+           
     public GregorianCalendar getFrom(){
         return from;
     }
@@ -48,7 +48,7 @@ public class reservation{
     public void finishReservation(){
         created = new Date();
         try {
-            writer.reservation(resNum, firstName, lastName, resType, from, till);
+            writer.reservation(resNum, firstName, lastName, resType);//, from, till);
             resNum++;
         }
         catch (IOException ioe) {}

@@ -48,7 +48,7 @@ public class reservation{
     public void finishReservation(){
         created = new Date();
         try {
-            writer.reservation(resNum, firstName, lastName, resType);//, from, till);
+            writer.reservation(resNum, firstName, lastName, resType, from, till);
             resNum++;
         }
         catch (IOException ioe) {}

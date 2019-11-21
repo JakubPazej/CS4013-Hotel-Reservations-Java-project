@@ -1,4 +1,7 @@
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.GregorianCalendar;
+import java.util.Date;
 /**
  * Write a description of class reservations here.
  *
@@ -8,26 +11,135 @@
 public class reservations
 {
     // instance variables - replace the example below with your own
-    private int x;
-
+    protected ArrayList<standard_booking> SReserve = new ArrayList<standard_booking>();
+    protected ArrayList<advanced_purchase> APReserve = new ArrayList<advanced_purchase>();
+    protected String ownerHotel;
     /**
      * Constructor for objects of class reservations
      */
-    public reservations()
-    {
-        // initialise instance variables
-        x = 0;
+    public reservations(){}
+    
+    public void setOwnerHotel(String ownerHotel){/**changes the Hotel name for all the reservations*/
+        this.ownerHotel=ownerHotel;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public String getOwnerHotel(){/**returns the Hotel name for all the reservations*/
+        return ownerHotel;
     }
+    
+    public void createStandardReservation(String firstName, String lastName,
+    GregorianCalendar from, GregorianCalendar till){
+        SReserve.add(new standard_booking(firstName, lastName, from, till));
+    }
+    
+    public void createAdvancedPReservation(String firstName, String lastName,
+    GregorianCalendar from, GregorianCalendar till){
+        APReserve.add(new advanced_purchase(firstName, lastName, from, till));
+    }
+    
+    public void setName(String newFirstName, String newLastName,
+    String oldFirstName, String oldLastName){
+        if(findSReservation(oldFirstName, oldLastName) != -1){
+            SReserve.get(findSReservation(oldFirstName, oldLastName)).setLastName(newLastName);
+            SReserve.get(findSReservation(oldFirstName, newLastName)).setFirstName(newFirstName);
+        }
+        if(findAPReservation(oldFirstName, oldLastName) != -1){
+            APReserve.get(findAPReservation(oldFirstName, oldLastName)).setLastName(newLastName);
+            APReserve.get(findAPReservation(oldFirstName, newLastName)).setFirstName(newFirstName);
+        }
+    }
+    
+    public String getResFirstName(String firstName, String lastName){
+        if(findSReservation(firstName, lastName) != -1){
+            return SReserve.get(findSReservation(firstName, lastName)).getFirstName();
+        }
+        if(findAPReservation(firstName, lastName) != -1){
+            return APReserve.get(findAPReservation(firstName, lastName)).getFirstName();
+        }
+        return null;
+    }
+    
+        public String getResLastName(String firstName, String lastName){
+        if(findSReservation(firstName, lastName) != -1){
+            return SReserve.get(findSReservation(firstName, lastName)).getLastName();
+        }
+        if(findAPReservation(firstName, lastName) != -1){
+            return APReserve.get(findAPReservation(firstName, lastName)).getLastName();
+        }
+        return null;
+    }
+    
+    public void setResFrom(String firstName, String lastName, int year, int month, int day){
+        if(findSReservation(firstName, lastName) != -1){
+            SReserve.get(findSReservation(firstName, lastName)).setFrom(year, month, day);
+        }
+        if(findAPReservation(firstName, lastName) != -1){
+            APReserve.get(findAPReservation(firstName, lastName)).setFrom(year, month, day);
+        }
+    }
+    
+    public void setResTill(String firstName, String lastName, int year, int month, int day){
+        if(findSReservation(firstName, lastName) != -1){
+            SReserve.get(findSReservation(firstName, lastName)).setTill(year, month, day);
+        }
+        if(findAPReservation(firstName, lastName) != -1){
+            APReserve.get(findAPReservation(firstName, lastName)).setTill(year, month, day);
+        }
+    }
+    
+    public GregorianCalendar getResTill(String firstName, String lastName){
+        if(findSReservation(firstName, lastName) != -1){
+            SReserve.get(findSReservation(firstName, lastName)).getTill();
+        }
+        if(findAPReservation(firstName, lastName) != -1){
+            APReserve.get(findAPReservation(firstName, lastName)).getTill();
+        }
+        return null;
+    }
+    
+    public GregorianCalendar getResFrom(String firstName, String lastName){
+        if(findSReservation(firstName, lastName) != -1){
+            SReserve.get(findSReservation(firstName, lastName)).getFrom();
+        }
+        if(findAPReservation(firstName, lastName) != -1){
+            APReserve.get(findAPReservation(firstName, lastName)).getFrom();
+        }
+        return null;
+    }
+    
+    private int findSReservation(String firstName, String lastName){/**returns index of specified reservation in the list*/
+        for(reservation h : SReserve){
+            if(h.getFirstName() != null && h.getFirstName().contains(firstName) 
+                && h.getLastName() != null && h.getLastName().contains(lastName)){ 
+                return SReserve.indexOf(h);                 
+            }
+        }
+        return -1;
+    }
+    
+    private int findAPReservation(String firstName, String lastName){/**returns index of specified reservation in the list*/
+        for(reservation h : APReserve){
+            if(h.getFirstName() != null && h.getFirstName().contains(firstName)
+            && h.getLastName() != null && h.getLastName().contains(lastName)){
+                return APReserve.indexOf(h);                 
+            }
+        }
+        return -1;
+    }
+    
+    /*private int findReservation(String firstName, String lastName){
+        for(reservation h : APReserve){
+            if(h.getFirstName() != null && h.getFirstName().contains(firstName)
+            && h.getLastName() != null && h.getLastName().contains(lastName)){
+                return APReserve.indexOf(h);                 
+            }
+        }
+        for(reservation h : SReserve){
+            if(h.getFirstName() != null && h.getFirstName().contains(firstName) 
+                && h.getLastName() != null && h.getLastName().contains(lastName)){ 
+                return SReserve.indexOf(h);                 
+            }
+        }
+        return -1;
+    } */
 }

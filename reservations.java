@@ -2,18 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.GregorianCalendar;
 import java.util.Date;
-/**
- * Write a description of class reservations here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+import java.io.*;
+
 public class reservations
 {
     // instance variables - replace the example below with your own
     protected ArrayList<standard_booking> SReserve = new ArrayList<standard_booking>();
     protected ArrayList<advanced_purchase> APReserve = new ArrayList<advanced_purchase>();
     protected String ownerHotel;
+    toReadCSV reader = new toReadCSV();
+    reservation reservation=new reservation();
     /**
      * Constructor for objects of class reservations
      */
@@ -28,13 +26,23 @@ public class reservations
     }
     
     public void createStandardReservation(String firstName, String lastName,
-    GregorianCalendar from, GregorianCalendar till){
+    GregorianCalendar from, GregorianCalendar till)throws Exception{
         SReserve.add(new standard_booking(firstName, lastName, from, till));
+        try {
+            int resNum =reader.nextRes();
+            reservation.finishReservation(resNum,firstName,lastName,"AP",from,till);
+        }
+        catch (IOException ioe) {}
     }
     
     public void createAdvancedPReservation(String firstName, String lastName,
-    GregorianCalendar from, GregorianCalendar till){
+    GregorianCalendar from, GregorianCalendar till) throws Exception{
         APReserve.add(new advanced_purchase(firstName, lastName, from, till));
+        try {
+            int resNum =reader.nextRes();
+            reservation.finishReservation(resNum,firstName,lastName,"AP",from,till);
+        }
+        catch (IOException ioe) {}
     }
     
     public void setName(String newFirstName, String newLastName,

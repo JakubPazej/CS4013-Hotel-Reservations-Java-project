@@ -53,4 +53,18 @@ public class reservation{
         }
         catch (IOException ioe) {}
     }
+    public void finishReservation(int resNum, String firstName,String lastName,String resType,GregorianCalendar from,GregorianCalendar till){
+        created = new Date();
+        this.resNum = resNum;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.resType=resType;
+        this.from=from;
+        this.till=till;
+        try {
+            writer.reservation(resNum, firstName, lastName, resType, from, till);
+            resNum++;
+        }
+        catch (IOException ioe) {}
+    }
 }

@@ -1,3 +1,10 @@
+/**
+*GUI class that utilizes all of the previous classes to make managing a hotel easier
+*
+*
+* @author 18260179
+*/
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

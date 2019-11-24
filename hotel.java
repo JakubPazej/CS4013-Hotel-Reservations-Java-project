@@ -1,4 +1,9 @@
-/**class for creating and managing a hotel*/
+/**
+*class for creating and managing a hotel
+*it has all the possible set and return methods
+*
+* @author 18260179
+*/
 import java.util.ArrayList;
 public class hotel{
   //datafields

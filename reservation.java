@@ -1,3 +1,9 @@
+/**
+*template class for reservation
+*it has all the possible set and return methods
+*
+* @author 18260179, 18241646
+*/
 import java.util.GregorianCalendar;
 import java.util.Date;
 import java.io.*;
@@ -29,23 +35,23 @@ public class reservation{
         return lastName;
     }
 
-    public void setFrom(int day, int month, int year){//sets the start date
+    public void setFrom(int day, int month, int year){/**sets the start date of the reservation*/
         from.set(year, month, day);
     }
 
-    public GregorianCalendar getFrom(){//return the start date
+    public GregorianCalendar getFrom(){/**returns the start date of a reservation*/
         return from;
     }
 
-    public void setTill(int day, int month, int year){//sets the end date
+    public void setTill(int day, int month, int year){/**sets the end date of a reservation*/
         till.set(year, month, day);
     }
 
-    public GregorianCalendar getTill(){//returns the end date
+    public GregorianCalendar getTill(){/**returns the end date of a reservation*/
         return till;
     }
 
-    public void finishReservation(){ //prints the reservation into the CSV file
+    public void finishReservation(){ /**prints the reservation into the CSV file*/
         created = new Date();
         try {
             writer.reservation(resNum, firstName, lastName, resType, from, till);
@@ -53,7 +59,7 @@ public class reservation{
         }
         catch (IOException ioe) {}
     }
-    public void finishReservation(int resNum, String firstName,String lastName,String resType,GregorianCalendar from,GregorianCalendar till){//prints reservation into csv file
+    public void finishReservation(int resNum, String firstName,String lastName,String resType,GregorianCalendar from,GregorianCalendar till){/**prints reservation with the specified values into csv file*/
         created = new Date();
         this.resNum = resNum;
         this.firstName = firstName;

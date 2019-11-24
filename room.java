@@ -1,4 +1,9 @@
-/**class for creating and managing rooms*/
+/**
+*class for creating and managing rooms
+*it has all the possible set and return methods
+*
+* @author 18260179
+*/
 public class room{
   //datafields
   protected String type;

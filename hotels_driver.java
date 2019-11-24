@@ -1,3 +1,9 @@
+/**
+* This is a driver class thats gonna be used in GUI to set up a default hotel 
+*
+*
+* @author 18260179
+*/
 public class hotels_driver{
     public static void main(String[] args){
         hotels hotelChain = new hotels();

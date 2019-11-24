@@ -1,3 +1,8 @@
+/**
+*class for writing to csv files
+*
+* @18241646
+*/
 import java.util.GregorianCalendar;
 import java.util.Date;
 import java.io.*;

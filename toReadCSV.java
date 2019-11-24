@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.Scanner;
 public class toReadCSV{
     private int x;
-    
-    public static void readRes(int resNum) throws Exception {
+
+    public static void readRes(int resNum) throws Exception { //prints out info from a csv file
         // Create a File instance
         java.io.File file = new java.io.File("outputFile.csv");
 
@@ -16,7 +16,7 @@ public class toReadCSV{
         while (input.hasNext()) {
             int isResNum = input.nextInt();
             if(isResNum == resNum) {
-         
+
                 String firstName = input.next();
                 String lastName = input.next();
                 String resType = input.next();
@@ -32,7 +32,7 @@ public class toReadCSV{
             //input.close();
         }
     }
-    public int nextRes() throws Exception {
+    public int nextRes() throws Exception { //returns the next resNum for the reservation system
         java.io.File file = new java.io.File("outputFile.csv");
         Scanner input = new Scanner(file);
         int numberofLines = 0;
@@ -42,5 +42,5 @@ public class toReadCSV{
         }
         return numberofLines;
     }
-        
+
 }

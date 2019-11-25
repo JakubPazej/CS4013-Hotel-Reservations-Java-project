@@ -6,6 +6,8 @@
 */
 import java.util.Scanner;
 public class hotels_driver{
+    String room ="";
+    String Hotel="";
     public static void main(String[] args){
         hotels hotelChain = new hotels();
         hotelChain.setOwnerCompany("L4 Hotels");//giving the hotel chain a company name
@@ -85,10 +87,11 @@ public class hotels_driver{
         Scanner input= new Scanner(System.in);
         System.out.println("What Hotel are you in?\n1.Upsilon.\n2.Theta.\n3.Omicron.");
         int choice = input.nextInt();
-        String room ="";
+        
         if(choice==1) {
-            System.out.println("1.Deluxe Double\n2.Deluxe Twin\n3.Deluxe Single\4Deluxe Family");
+            System.out.println("1.Deluxe Double\n2.Deluxe Twin\n3.Deluxe Single\n4Deluxe Family");
             int choice2=input.nextInt();
+            Hotel = "Upsilon";
             if (choice2==1) {
                 room = "Deluxe Double";
             }
@@ -103,6 +106,7 @@ public class hotels_driver{
             }
         }
         if(choice==2) {
+            Hotel = "Theta";
             System.out.println("1.Executive Double\n2.Executive Twin\n3.Executive Single");
             int choice2=input.nextInt();
             if (choice2==1) {
@@ -116,6 +120,7 @@ public class hotels_driver{
             }
         }
         if(choice==3) {
+            Hotel="Omicron";
             System.out.println("1.Classic Double\n2.Classic Twin\n3.Classic Single");
             int choice2=input.nextInt();
             if (choice2==1) {
@@ -129,5 +134,8 @@ public class hotels_driver{
             }
         }
         return room;
+    }
+    public String getHotel(){
+        return Hotel;
     }
 }

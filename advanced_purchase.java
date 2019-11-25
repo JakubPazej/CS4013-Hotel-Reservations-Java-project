@@ -16,15 +16,16 @@ public class advanced_purchase extends reservation{/**creates an instance of an 
         this.created = new Date();
         this.resType = "Advanced purchase";
     }
-    public advanced_purchase(String firstName, String lastName, String from, String till ){ //sets the reservation to advanced booking
+    public advanced_purchase(String firstName, String lastName, String from, String till,String hotel,String room ){ //sets the reservation to advanced booking
         this.firstName = firstName;
         this.lastName = lastName;
         this.fromS = from;
         this.tillS = till;
+        this.room=room;
         this.created = new Date();
         this.resType = "Advanced purchase";
     }
-    public void finishReservationS() throws Exception{ /**prints the reservation into the CSV file*/
+    public void finishReservationA() throws Exception{ /**prints the reservation into the CSV file*/
         created = new Date();
         try {
             
@@ -32,7 +33,7 @@ public class advanced_purchase extends reservation{/**creates an instance of an 
             
         
         
-            writer.reservation(resNum, firstName, lastName, resType, fromS, tillS);
+            writer.reservation(resNum, firstName, lastName, resType, fromS, tillS,hotel, room);
             
         }
         catch (IOException ioe) {}

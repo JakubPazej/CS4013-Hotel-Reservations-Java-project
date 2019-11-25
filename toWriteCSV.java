@@ -23,7 +23,7 @@ public class toWriteCSV {
                 }
                 else{
                     StringBuffer csvHeader = new StringBuffer("");
-                    csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date,RoomType\n");
+                    csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date,Hotel,Room\n");
                     pw.write(csvHeader.toString());
                 }
 
@@ -49,13 +49,13 @@ public class toWriteCSV {
             pw.write(csvData.toString());
             pw.close();
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
         }
     }
-    public static void reservation(int resNum, String firstName, String lastName,String resType ,String from, String till ) throws java.io.IOException { //prints the reservation into a csv file
+    public static void reservation(int resNum, String firstName, String lastName,String resType ,String from, String till,String hotel,String room ) throws java.io.IOException { //prints the reservation into a csv file
         PrintWriter pw;
-        hotel hotel = new hotel(resType);
+        hotel hotell = new hotel(resType);
         Date created = new Date();
         try {
             File file = new File("outputFile.csv");
@@ -67,7 +67,7 @@ public class toWriteCSV {
                 }
                 else{
                     StringBuffer csvHeader = new StringBuffer("");
-                    csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date,Room\n");
+                    csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date,Hotel,Room\n");
                     pw.write(csvHeader.toString());
                 }
 
@@ -88,12 +88,17 @@ public class toWriteCSV {
             csvData.append(',');
             csvData.append(created);
             csvData.append(',');
+            csvData.append(hotel);
+            csvData.append(',');
+            csvData.append(room);
+            csvData.append(',');
             csvData.append('\n');
-
+            
+            
             pw.write(csvData.toString());
             pw.close();
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
         }
     }
@@ -104,7 +109,7 @@ public class toWriteCSV {
             Scanner testing = new Scanner(file);
             StringBuffer csvData = new StringBuffer("");
             StringBuffer csvHeader = new StringBuffer("");
-            csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date\n");
+            csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date,Hotel,Room\n");
             pw.write(csvHeader.toString());
 
     }

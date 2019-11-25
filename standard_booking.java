@@ -18,11 +18,12 @@ public class standard_booking extends reservation{/**creates an instance of a st
         this.created = new Date();
         this.resType = "Standard booking";
     }
-    public standard_booking(String firstName, String lastName, String from, String till){ //sets the reservation to standard
+    public standard_booking(String firstName, String lastName, String from, String till,String hotel,String Room){ //sets the reservation to standard
         this.firstName = firstName;
         this.lastName = lastName;
         this.fromS = from;
         this.tillS = till;
+        this.room=room;
         this.created = new Date();
         this.resType = "Standard booking";
     }
@@ -34,6 +35,7 @@ public class standard_booking extends reservation{/**creates an instance of a st
         this.created = new Date();
         this.resType = "Standard booking";
     }
+    
     public void finishReservation() throws Exception{ /**prints the reservation into the CSV file*/
         created = new Date();
         try {

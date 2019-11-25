@@ -2,8 +2,9 @@
 * This is a driver class thats gonna be used in GUI to set up a default hotel 
 *
 *
-* @author 18260179
+* @author 18260179 & 18241646
 */
+import java.util.Scanner;
 public class hotels_driver{
     public static void main(String[] args){
         hotels hotelChain = new hotels();
@@ -79,5 +80,54 @@ public class hotels_driver{
         hotelChain.setRates("Omicron", "Classic Double", Omicron_Double);
         hotelChain.setRates("Omicron", "Classic Twin", Omicron_Twin);
         hotelChain.setRates("Omicron", "Classic Single", Omicron_Single);
+    }
+    public String listAllRooms() {
+        Scanner input= new Scanner(System.in);
+        System.out.println("What Hotel are you in?\n1.Upsilon.\n2.Theta.\n3.Omicron.");
+        int choice = input.nextInt();
+        String room ="";
+        if(choice==1) {
+            System.out.println("1.Deluxe Double\n2.Deluxe Twin\n3.Deluxe Single\4Deluxe Family");
+            int choice2=input.nextInt();
+            if (choice2==1) {
+                room = "Deluxe Double";
+            }
+            if (choice2==2) {
+                room = "Deluxe Twin";
+            }
+            if (choice2==3) {
+                room = "Deluxe Single";
+            }
+            if (choice2==4) {
+                room = "Deluxe Family";
+            }
+        }
+        if(choice==2) {
+            System.out.println("1.Executive Double\n2.Executive Twin\n3.Executive Single");
+            int choice2=input.nextInt();
+            if (choice2==1) {
+                room = "Exe Double";
+            }
+            if (choice2==2) {
+                room = "Exe Twin";
+            }
+            if (choice2==3) {
+                room = "Exe Single";
+            }
+        }
+        if(choice==3) {
+            System.out.println("1.Classic Double\n2.Classic Twin\n3.Classic Single");
+            int choice2=input.nextInt();
+            if (choice2==1) {
+                room = "Classic Double";
+            }
+            if (choice2==2) {
+                room = "Classic Twin";
+            }
+            if (choice2==3) {
+                room = "Classice Single";
+            }
+        }
+        return room;
     }
 }

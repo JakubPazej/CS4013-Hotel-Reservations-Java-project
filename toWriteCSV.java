@@ -12,6 +12,7 @@ public class toWriteCSV {
     public static void reservation(int resNum, String firstName, String lastName,String resType ,GregorianCalendar from, GregorianCalendar till ) throws java.io.IOException { //prints the reservation into a csv file
         PrintWriter pw;
         Date created = new Date();
+        hotel hotel = new hotel(resType);
         try {
             File file = new File("outputFile.csv");
             pw = new PrintWriter((new FileWriter(file,true)));
@@ -22,7 +23,7 @@ public class toWriteCSV {
                 }
                 else{
                     StringBuffer csvHeader = new StringBuffer("");
-                    csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date\n");
+                    csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date,RoomType\n");
                     pw.write(csvHeader.toString());
                 }
 
@@ -54,6 +55,7 @@ public class toWriteCSV {
     }
     public static void reservation(int resNum, String firstName, String lastName,String resType ,String from, String till ) throws java.io.IOException { //prints the reservation into a csv file
         PrintWriter pw;
+        hotel hotel = new hotel(resType);
         Date created = new Date();
         try {
             File file = new File("outputFile.csv");
@@ -65,7 +67,7 @@ public class toWriteCSV {
                 }
                 else{
                     StringBuffer csvHeader = new StringBuffer("");
-                    csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date\n");
+                    csvHeader.append("ReservationNum,Name,Surname,Reservation Type,StartDate,EndDate,Date,Room\n");
                     pw.write(csvHeader.toString());
                 }
 

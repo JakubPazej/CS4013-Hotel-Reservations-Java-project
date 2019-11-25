@@ -12,9 +12,12 @@ public class reservation{
     String lastName;
     GregorianCalendar from;
     GregorianCalendar till;
+    String fromS;
+    String tillS;
     Date created;
     int resNum = 0;
     toWriteCSV writer = new toWriteCSV();
+    toReadCSV reader = new toReadCSV();
     String resType;
 
     public reservation(){}
@@ -51,11 +54,30 @@ public class reservation{
         return till;
     }
 
-    public void finishReservation(){ /**prints the reservation into the CSV file*/
+    public void finishReservation() throws Exception{ /**prints the reservation into the CSV file*/
         created = new Date();
         try {
+            
+            int resNum =reader.nextRes();
+            
+        
+        
             writer.reservation(resNum, firstName, lastName, resType, from, till);
-            resNum++;
+            
+        }
+        catch (IOException ioe) {}
+    }
+    
+    public void finishReservationS() throws Exception{ /**prints the reservation into the CSV file*/
+        created = new Date();
+        try {
+            
+            int resNum =reader.nextRes();
+            
+        
+        
+            writer.reservation(resNum, firstName, lastName, resType, fromS, tillS);
+            
         }
         catch (IOException ioe) {}
     }

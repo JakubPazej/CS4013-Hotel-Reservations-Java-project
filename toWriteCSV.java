@@ -9,7 +9,8 @@ import java.io.*;
 import java.util.Scanner;
 
 public class toWriteCSV {
-    public static void reservation(int resNum, String firstName, String lastName,String resType ,GregorianCalendar from, GregorianCalendar till ) throws java.io.IOException { //prints the reservation into a csv file
+	/**prints the reservation into a csv file*/
+    public static void reservation(int resNum, String firstName, String lastName,String resType ,GregorianCalendar from, GregorianCalendar till ) throws java.io.IOException { 
         PrintWriter pw;
         Date created = new Date();
         hotel hotel = new hotel(resType);
@@ -53,7 +54,9 @@ public class toWriteCSV {
             e.printStackTrace();
         }
     }
-    public static void reservation(int resNum, String firstName, String lastName,String resType ,String from, String till,String hotel,String room ) throws java.io.IOException { //prints the reservation into a csv file
+    
+  /**prints the reservation into a csv file*/
+    public static void reservation(int resNum, String firstName, String lastName,String resType ,String from, String till,String hotel,String room ) throws java.io.IOException { 
         PrintWriter pw;
         hotel hotell = new hotel(resType);
         Date created = new Date();
@@ -102,7 +105,9 @@ public class toWriteCSV {
             e.printStackTrace();
         }
     }
-    public static void clear() throws java.io.IOException{ //clears the csv file
+    
+  /**clears the csv file*/
+    public static void clear() throws java.io.IOException{ 
             File file = new File("outputFile.csv");
             PrintWriter pw;
             pw = new PrintWriter((new FileWriter(file,false)));

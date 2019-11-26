@@ -22,16 +22,19 @@ public class reservations
      */
     public reservations(){}
 
-    public void setOwnerHotel(String ownerHotel){/**changes the Hotel name for all the reservations*/
+    /**changes the Hotel name for all the reservations*/
+    public void setOwnerHotel(String ownerHotel){
         this.ownerHotel=ownerHotel;
     }
 
-    public String getOwnerHotel(){/**returns the Hotel name for all the reservations*/
+    /**returns the Hotel name for all the reservations*/
+    public String getOwnerHotel(){
         return ownerHotel;
     }
-
+  
+    /**creates a standard booking reservation*/
     public void createStandardReservation(String firstName, String lastName,
-    GregorianCalendar from, GregorianCalendar till)throws Exception{  //creates a standard booking reservation
+    GregorianCalendar from, GregorianCalendar till)throws Exception{  
         SReserve.add(new standard_booking(firstName, lastName, from, till));
         try {
             int resNum =reader.nextRes();
@@ -40,8 +43,9 @@ public class reservations
         catch (IOException ioe) {}
     }
 
+    /**creates an advanced booking reservation*/
     public void createAdvancedPReservation(String firstName, String lastName,
-    GregorianCalendar from, GregorianCalendar till) throws Exception{ //creates an advanced booking reservation
+    GregorianCalendar from, GregorianCalendar till) throws Exception{ 
         APReserve.add(new advanced_purchase(firstName, lastName, from, till));
         try {
             int resNum =reader.nextRes();
@@ -50,8 +54,9 @@ public class reservations
         catch (IOException ioe) {}
     }
 
+   /**changes the name of a reservation*/
     public void setName(String newFirstName, String newLastName,
-    String oldFirstName, String oldLastName){ //changes the name of a reservation
+    String oldFirstName, String oldLastName){ 
         if(findSReservation(oldFirstName, oldLastName) != -1){
             SReserve.get(findSReservation(oldFirstName, oldLastName)).setLastName(newLastName);
             SReserve.get(findSReservation(oldFirstName, newLastName)).setFirstName(newFirstName);
@@ -62,7 +67,8 @@ public class reservations
         }
     }
 
-    public String getResFirstName(String firstName, String lastName){ //returns the name of a reservation
+  /**returns the name of a reservation*/
+    public String getResFirstName(String firstName, String lastName){ 
         if(findSReservation(firstName, lastName) != -1){
             return SReserve.get(findSReservation(firstName, lastName)).getFirstName();
         }
@@ -72,7 +78,8 @@ public class reservations
         return null;
     }
 
-        public String getResLastName(String firstName, String lastName){ //returns the last name of a reservation
+        /**returns the last name of a reservation*/
+        public String getResLastName(String firstName, String lastName){ 
         if(findSReservation(firstName, lastName) != -1){
             return SReserve.get(findSReservation(firstName, lastName)).getLastName();
         }
@@ -82,7 +89,8 @@ public class reservations
         return null;
     }
 
-    public void setResFrom(String firstName, String lastName, int year, int month, int day){ //changes the start date of a reservation
+      /**changes the start date of a reservation*/
+    public void setResFrom(String firstName, String lastName, int year, int month, int day){ 
         if(findSReservation(firstName, lastName) != -1){
             SReserve.get(findSReservation(firstName, lastName)).setFrom(year, month, day);
         }
@@ -91,7 +99,8 @@ public class reservations
         }
     }
 
-    public void setResTill(String firstName, String lastName, int year, int month, int day){ //changes the end date of a reservation
+  /**changes the end date of a reservation*/
+    public void setResTill(String firstName, String lastName, int year, int month, int day){ 
         if(findSReservation(firstName, lastName) != -1){
             SReserve.get(findSReservation(firstName, lastName)).setTill(year, month, day);
         }
@@ -100,7 +109,8 @@ public class reservations
         }
     }
 
-    public GregorianCalendar getResTill(String firstName, String lastName){ //returns the end date of a reservation
+    /**returns the end date of a reservation*/
+    public GregorianCalendar getResTill(String firstName, String lastName){ 
         if(findSReservation(firstName, lastName) != -1){
             SReserve.get(findSReservation(firstName, lastName)).getTill();
         }
@@ -110,7 +120,8 @@ public class reservations
         return null;
     }
 
-    public GregorianCalendar getResFrom(String firstName, String lastName){ // returns the start date of a reservation
+    /**returns the start date of a reservation*/
+    public GregorianCalendar getResFrom(String firstName, String lastName){ 
         if(findSReservation(firstName, lastName) != -1){
             SReserve.get(findSReservation(firstName, lastName)).getFrom();
         }
@@ -120,7 +131,8 @@ public class reservations
         return null;
     }
 
-    private int findSReservation(String firstName, String lastName){/**returns index of specified reservation in the list*/
+    /**returns index of specified reservation in the list*/
+    private int findSReservation(String firstName, String lastName){
         for(reservation h : SReserve){
             if(h.getFirstName() != null && h.getFirstName().contains(firstName)
                 && h.getLastName() != null && h.getLastName().contains(lastName)){
@@ -130,7 +142,8 @@ public class reservations
         return -1;
     }
 
-    private int findAPReservation(String firstName, String lastName){/**returns index of specified reservation in the list*/
+    /**returns index of specified reservation in the list*/
+    private int findAPReservation(String firstName, String lastName){
         for(reservation h : APReserve){
             if(h.getFirstName() != null && h.getFirstName().contains(firstName)
             && h.getLastName() != null && h.getLastName().contains(lastName)){

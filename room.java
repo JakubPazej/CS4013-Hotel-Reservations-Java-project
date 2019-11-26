@@ -15,20 +15,25 @@ public class room{
   protected double[] rates = new double[7];
   protected int numOfRooms;
 
-  public room(String type){/**creates a room object with desired type*/
+  /**creates a room object with desired type*/
+  public room(String type){
     this.type = type;
   }
 
-  public void setRoomType(String type){this.type = type;} /** changes room type*/
+  /** changes room type*/
+  public void setRoomType(String type){this.type = type;} 
 
-  public String getRoomType(){return type;} /** returns room type*/
+  /** returns room type*/
+  public String getRoomType(){return type;} 
 
-  public void setOccuMax(int ocuMaxAdult, int ocuMaxKid){/**changes max ocupancy limits*/
+  /**changes max ocupancy limits*/
+  public void setOccuMax(int ocuMaxAdult, int ocuMaxKid){
     this. ocuMaxKid = ocuMaxKid;
     this.ocuMaxAdult = ocuMaxAdult;
   }
 
-  public String getOccuMax(){/**returns max ocupancy limits as a String*/
+  /**returns max ocupancy limits as a String*/
+  public String getOccuMax(){
     String returnString="";
     if (ocuMaxAdult == 1){
       returnString=returnString+"Maximum occupancy limits for room of type "+type+" are "+ocuMaxAdult +" adult";
@@ -43,12 +48,14 @@ public class room{
     return(returnString);
   }
 
-  public void setOccuMin(int ocuMinAdult, int ocuMinKid){/**changes min ocupancy limits*/
+  /**changes min ocupancy limits*/
+  public void setOccuMin(int ocuMinAdult, int ocuMinKid){
     this. ocuMinKid = ocuMinKid;
     this.ocuMinAdult = ocuMinAdult;
   }
 
-  public String getOccuMin(){/**returns min ocupancy limits as a String*/
+  /**returns min ocupancy limits as a String*/
+  public String getOccuMin(){
     String returnString="";
     if (ocuMinAdult == 1){
       returnString=returnString+"Minimum occupancy limits for room of type "+type+" are "+ocuMaxAdult +" adult";
@@ -63,15 +70,21 @@ public class room{
     return(returnString);
   }
 
-  public void setBreakfast(boolean breakfast){this.breakfast = breakfast;}/**changes the availability of breakfast in specified room*/
+  /**changes the availability of breakfast in specified room*/
+  public void setBreakfast(boolean breakfast){this.breakfast = breakfast;}
 
-  public boolean getBreakfast(){return breakfast;}/**returns the availability of breakfast in specified room*/
+  /**returns the availability of breakfast in specified room*/
+  public boolean getBreakfast(){return breakfast;}
 
-  public void setRates(double[] rates){this.rates = rates;}/**changes the rates for a room*/
+  /**changes the rates for a room*/
+  public void setRates(double[] rates){this.rates = rates;}
 
-  public double[] getRates(){return rates;}/**returns rates for this room as double array*/
+  /**returns rates for this room as double array*/
+  public double[] getRates(){return rates;}
 
-  public void setNumRooms(int num){num=numOfRooms;}/**changes the number of rooms of given type*/
+  /**changes the number of rooms of given type*/
+  public void setNumRooms(int num){num=numOfRooms;}
 
-  public int getNumRooms(){return numOfRooms;}/**returns the number of rooms of given type as an integer*/
+  /**returns the number of rooms of given type as an integer*/
+  public int getNumRooms(){return numOfRooms;}
 }

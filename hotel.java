@@ -11,79 +11,98 @@ public class hotel{
   protected ArrayList<room> roomTypes = new ArrayList<room>();
   protected int stars = -1;
   
-  public hotel(String name){/**creates a hotel object with given name*/
+  /**creates a hotel object with given name*/
+  public hotel(String name){
     this.name=name;
   }
   
-  public void setName(String name){/**changes a name for hotel object*/
+  /**changes a name for hotel object*/
+  public void setName(String name){
     this.name=name;
   }
   
-  public String getName(){/**returns a String with the name of the hotel object*/
+  /**returns a String with the name of the hotel object*/
+  public String getName(){
     return name;
   }
   
-  public void setStars(int stars){/**changes amount of stars for hotel object*/
+  /**changes amount of stars for hotel object*/
+  public void setStars(int stars){
     this.stars=stars;
   }
   
-  public int getStars(){/**returns amount of stars of the hotel object as integer*/
+  /**returns amount of stars of the hotel object as integer*/
+  public int getStars(){
     return stars;
   }
 
-  public void addRoomType(String roomType){/**adds a room type to the room types list*/
+  /**adds a room type to the room types list*/
+  public void addRoomType(String roomType){
     roomTypes.add(new room(roomType));
   }
   
-  public void removeRoomType(String roomType){/**removes a given room type from the list*/
+  /**removes a given room type from the list*/
+  public void removeRoomType(String roomType){
     roomTypes.remove(roomType);
   }
   
-  public void changeRoomType(String type, String newType){/**changes the name of a given room type from the list*/
+  /**changes the name of a given room type from the list*/
+  public void changeRoomType(String type, String newType){
     roomTypes.get(findRoomType(type)).setRoomType(newType);    
   }
   
-  public void changeOccuMin(String type, int minAdult, int minKid){/**changes the minimum occupancy limits for a room*/
+  /**changes the minimum occupancy limits for a room*/
+  public void changeOccuMin(String type, int minAdult, int minKid){
     roomTypes.get(findRoomType(type)).setOccuMin(minAdult, minKid);    
   }
   
-  public String getOccuMin(String type){/**returns the minimum occupancy limits for a room as a String*/
+  /**returns the minimum occupancy limits for a room as a String*/
+  public String getOccuMin(String type){
     return roomTypes.get(findRoomType(type)).getOccuMin();    
   }
   
-  public void changeOccuMax(String type, int maxAdult, int maxKid){/**changes the maximum occupancy limits for a room*/
+  /**changes the maximum occupancy limits for a room*/
+  public void changeOccuMax(String type, int maxAdult, int maxKid){
     roomTypes.get(findRoomType(type)).setOccuMax(maxAdult, maxKid);    
   }
   
-  public String getOccuMax(String type){/**returns the maximum occupancy limits for a room as a String*/
+  /**returns the maximum occupancy limits for a room as a String*/
+  public String getOccuMax(String type){
     return roomTypes.get(findRoomType(type)).getOccuMax();    
   }
   
-  public void setBreakfast(String type, boolean bool){ /**changes the availability of breakfast for a room*/
+  /**changes the availability of breakfast for a room*/
+  public void setBreakfast(String type, boolean bool){
     roomTypes.get(findRoomType(type)).setBreakfast(bool);
   }
   
-  public boolean getBreakfast(String type){/**returns the availability of breakfast for a room as a boolean*/
+  /**returns the availability of breakfast for a room as a boolean*/
+  public boolean getBreakfast(String type){
     return roomTypes.get(findRoomType(type)).getBreakfast();
   }
   
-  public void setRates(String type, double[] rates){/**changes the rates for a room*/
+  /**changes the rates for a room*/
+  public void setRates(String type, double[] rates){
     roomTypes.get(findRoomType(type)).setRates(rates);
   }
 
-  public double[] getRates(String type){/**returns rates for this room as double array*/
+  /**returns rates for this room as double array*/
+  public double[] getRates(String type){
     return roomTypes.get(findRoomType(type)).getRates();
   }
 
-  public void setNumRooms(String type, int num){/**changes the number of rooms of given type*/
+  /**changes the number of rooms of given type*/
+  public void setNumRooms(String type, int num){
     roomTypes.get(findRoomType(type)).setNumRooms(num);
   }
 
-  public int getNumRooms(String type){/**returns the number of rooms of given type as an integer*/
+  /**returns the number of rooms of given type as an integer*/
+  public int getNumRooms(String type){
     return roomTypes.get(findRoomType(type)).getNumRooms();
   }
   
-  private int findRoomType(String roomType){/**returns index of specified room type in the list*/
+  /**returns index of specified room type in the list*/
+  private int findRoomType(String roomType){
     for(room r : roomTypes){
         if(r.getRoomType() != null && r.getRoomType().contains(roomType)){
            return roomTypes.indexOf(r);

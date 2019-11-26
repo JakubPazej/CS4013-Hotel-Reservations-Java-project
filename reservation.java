@@ -21,42 +21,52 @@ public class reservation{
     toWriteCSV writer = new toWriteCSV();
     toReadCSV reader = new toReadCSV();
     String resType;
-
+    
+    /** constructor for object class reservation */
     public reservation(){}
 
-    public void setFirstName(String firstName){/**changes the first name for a reservation*/
+    /**changes the first name for a reservation*/
+    public void setFirstName(String firstName){
         this.firstName = firstName;
     }
 
-    public String getFirstName(){/**returns the first name for a reservation*/
+    /**returns the first name for a reservation*/
+    public String getFirstName(){
         return firstName;
     }
 
-    public void setLastName(String lastName){/**changes the last name for a reservation*/
+    /**changes the last name for a reservation*/
+    public void setLastName(String lastName){
         this.lastName = lastName;
     }
 
-    public String getLastName(){/**returns the last name for a reservation*/
+    /**returns the last name for a reservation*/
+    public String getLastName(){
         return lastName;
     }
 
-    public void setFrom(int day, int month, int year){/**sets the start date of the reservation*/
+    /**sets the start date of the reservation*/
+    public void setFrom(int day, int month, int year){
         from.set(year, month, day);
     }
 
-    public GregorianCalendar getFrom(){/**returns the start date of a reservation*/
+    /**returns the start date of a reservation*/
+    public GregorianCalendar getFrom(){
         return from;
     }
 
-    public void setTill(int day, int month, int year){/**sets the end date of a reservation*/
+    /**sets the end date of a reservation*/
+    public void setTill(int day, int month, int year){
         till.set(year, month, day);
     }
 
-    public GregorianCalendar getTill(){/**returns the end date of a reservation*/
+    /**returns the end date of a reservation*/
+    public GregorianCalendar getTill(){
         return till;
     }
 
-    public void finishReservation() throws Exception{ /**prints the reservation into the CSV file*/
+    /**prints the reservation into the CSV file*/
+    public void finishReservation() throws Exception{
         created = new Date();
         try {
             
@@ -70,7 +80,8 @@ public class reservation{
         catch (IOException ioe) {}
     }
     
-    public void finishReservationS() throws Exception{ /**prints the reservation into the CSV file*/
+    /**prints the reservation into the CSV file*/
+    public void finishReservationS() throws Exception{
         created = new Date();
         try {
             
@@ -83,7 +94,9 @@ public class reservation{
         }
         catch (IOException ioe) {}
     }
-    public void finishReservation( String firstName,String lastName,String resType,GregorianCalendar from,GregorianCalendar till)throws Exception{/**prints reservation with the specified values into csv file*/
+    
+    /**prints reservation with the specified values into csv file*/
+    public void finishReservation( String firstName,String lastName,String resType,GregorianCalendar from,GregorianCalendar till)throws Exception{
         created = new Date();
         //this.resNum = resNum;
         this.firstName = firstName;

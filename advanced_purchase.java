@@ -7,7 +7,9 @@
 import java.util.GregorianCalendar;
 import java.util.Date;
 import java.io.*;
-public class advanced_purchase extends reservation{/**creates an instance of an AP reservation*/
+public class advanced_purchase extends reservation{/**
+													*creates an instance of an AP reservation
+													*/
     public advanced_purchase(String firstName, String lastName, GregorianCalendar from, GregorianCalendar till ){ //sets the reservation to advanced booking
         this.firstName = firstName;
         this.lastName = lastName;
@@ -16,7 +18,8 @@ public class advanced_purchase extends reservation{/**creates an instance of an 
         this.created = new Date();
         this.resType = "Advanced purchase";
     }
-    public advanced_purchase(String firstName, String lastName, String from, String till,String hotel,String room ){ //sets the reservation to advanced booking
+    /**sets the reservation to advanced booking*/
+    public advanced_purchase(String firstName, String lastName, String from, String till,String hotel,String room ){
         this.firstName = firstName;
         this.lastName = lastName;
         this.fromS = from;
@@ -25,7 +28,8 @@ public class advanced_purchase extends reservation{/**creates an instance of an 
         this.created = new Date();
         this.resType = "Advanced purchase";
     }
-    public void finishReservationA() throws Exception{ /**prints the reservation into the CSV file*/
+    /**prints the reservation into the CSV file*/
+    public void finishReservationA() throws Exception{
         created = new Date();
         try {
             

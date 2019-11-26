@@ -11,7 +11,8 @@ public class toReadCSV{
     private int x;
     private int resNum = 0;
 
-    public static void readRes(int resNum) throws Exception { //prints out info from a csv file
+  /**prints out info from a csv file*/
+    public static void readRes(int resNum) throws Exception { 
         // Create a File instance
         java.io.File file = new java.io.File("outputFile.csv");
 
@@ -38,7 +39,9 @@ public class toReadCSV{
             //input.close();
         }
     }
-    public int nextRes() throws Exception { //returns the next resNum for the reservation system
+    
+  /**returns the next resNum for the reservation system*/
+    public int nextRes() throws Exception { 
         java.io.File file = new java.io.File("outputFile.csv");
         Scanner input = new Scanner(file);
         int numberofLines = 0;
@@ -48,7 +51,9 @@ public class toReadCSV{
         }
         return numberofLines;
     }
-    public static String readResType(int resNum) throws Exception { //prints out info from a csv file
+    
+  /**prints out info from a csv file*/
+    public static String readResType(int resNum) throws Exception { 
         String resType = "";
         
         // Create a File instance
@@ -77,7 +82,9 @@ public class toReadCSV{
         }
         return resType;
     }
-    public static String readResLastName(int resNum) throws Exception { //prints out info from a csv file
+    
+  /**prints out info from a csv file*/
+    public static String readResLastName(int resNum) throws Exception { 
         String lastName = "";
         
         // Create a File instance
@@ -106,7 +113,9 @@ public class toReadCSV{
         }
         return lastName;
     }
-    public static String readResFirstName(int resNum) throws Exception { //prints out info from a csv file
+    
+  /**prints out info from a csv file*/
+    public static String readResFirstName(int resNum) throws Exception { 
         String firstName = "";
         
         // Create a File instance
@@ -135,7 +144,9 @@ public class toReadCSV{
         }
         return firstName;
     }
-    public static String readResStart(int resNum) throws Exception { //prints out info from a csv file
+    
+  /**prints out info from a csv file*/
+    public static String readResStart(int resNum) throws Exception { 
         String startDate = "";
         
         // Create a File instance
@@ -164,7 +175,9 @@ public class toReadCSV{
         }
         return startDate;
     }
-    public static String readResEnd(int resNum) throws Exception { //prints out info from a csv file
+    
+  /**prints out info from a csv file*/
+    public static String readResEnd(int resNum) throws Exception { 
         String endDate = "";
         
         // Create a File instance
